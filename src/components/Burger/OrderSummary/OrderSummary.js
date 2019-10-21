@@ -4,11 +4,11 @@ import Button from '../../UI/Button/Button';
 
 
 class OrderSummary extends Component {
-componentWillUpdate() {
+    componentWillUpdate() {
     console.log('[OrderSummary] will update!');
-}
-
+   }
     render () {
+        
         const ingredientSummary = Object.keys(this.props.ingredients)
         .map(igKey => {
             return (
@@ -16,7 +16,6 @@ componentWillUpdate() {
                     <span style={{textTransform: 'capitalize'}}>{igKey}</span>: {this.props.ingredients[igKey]}
                 </li>);
         });
-
         return (
             <Auxiliary>
                 <h3> Your Order</h3>
@@ -30,7 +29,8 @@ componentWillUpdate() {
                 <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
             </Auxiliary>
         );
+
     }
-}
+} 
 
 export default OrderSummary;
